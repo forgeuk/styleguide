@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forge Styleguide</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo:400,400i,500,700" rel="stylesheet">
+    <style media="screen">
+      /*
+          Palette
+
+          Neutral
+          -------
+          Dark:           #2D2D3F
+          Grey:           #616166
+          Light Grey:     #9F9FA6
+          Light:          #F8F8F8
+
+          Colours
+          -------
+          Pink:           #F47A97
+          Orange:         #EA7F6A
+          Yellow:         #FFC166
+          Light Green:    #94C979
+          Teal:           #65A1A8
+          Blue:           #92D6F4
+      */
+      @font-face {
+        font-family: 'YoungSerifRegular';
+            src: url('https://fontlibrary.org/assets/fonts/youngserif/f86f47ba7a24e9794b05a9e8a6d06b54/c1ddc79548c56154c22d7fed06082b42/YoungSerifRegular.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      html { font-size: 20px; }
+
+      body {
+        font-family: 'Archivo', sans-serif;
+        font-size: 20px;
+        font-weight: normal;
+        padding: 2em 0;
+        color: #F8F8F8;
+        -webkit-font-smoothing: antialiased;
+	      -moz-osx-font-smoothing: grayscale;
+
+        margin: 0;
+        background: #2D2D3F;
+      }
+      ::-moz-selection { background: #9F9FA6; }
+      ::selection { background: #9F9FA6; }
+
+      @media (min-resolution: 192dpi) {
+        body {
+          -webkit-font-smoothing: unset;
+  	      -moz-osx-font-smoothing: unset;
+        }
+        /* antialiased isn’t needed on retina type screens */
+      }
+
+      p, li {
+        line-height: 1.5; /* 1.5 is a really good general default for text*/
+        margin: 0 0 1.5em 0; /* Using a relative size, like em, makes responsive text easy */
+      }
+      p a {
+        color: #92D6F4;
+        border-bottom: 2px solid;
+        border-color: #92D6F4;
+        text-decoration: none;
+      }
+      p a:hover {
+        color: #65A1A8;
+        border-color: #65A1A8;
+      }
+
+      bold, b { font-weight: bold; }
+
+      h1, h2, h3, h4, h5, h6 {
+        line-height: 1.1; /* Line-height for headings should always be less than text */
+        margin: 0.5em 0;
+      }
+
+      p.lead {
+        font-size: 1.5em;
+        margin-top: 0;
+        font-style: italic;
+      }
+      p.small {
+        font-size: 0.8em; /* 16px on a desktop */
+      }
+
+      .label {
+        font-size: 0.8em;
+        text-transform: uppercase;
+        letter-spacing: 2px; /* It’s good practice to add letter spacing to all-caps text, don’t add it to body text though! */
+        font-weight: bold;
+        font-style: normal;
+        color: #2D2D3F;
+      }
+
+      h1 {
+        font-weight: bold;
+        font-style: normal;
+        font-size: 3em; /* 60px on a desktop */
+        letter-spacing: -1px;
+        margin-bottom: 1rem;
+      }
+      h2 { font-size: 1.5em; } /* 30px on a desktop */
+
+      h3 { font-size: 1.25em; } /* 25px on a desktop */
+
+      h4, h5, h6 {
+
+      }
+      blockquote {
+        color: #991752;
+        font-style: italic;
+
+        margin: 0;
+        max-width: 24em;
+        margin-bottom: 2em;
+      }
+      blockquote p {
+        margin-bottom: 0.5em;
+      }
+      blockquote .referee {
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      .button {
+        display: inline-block;
+        font-size: 0.8em;
+        padding: 0.75em 1.25em;
+        border-radius: 2px;
+        color: white;
+        background: #991752;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .button:hover {
+        background: #7A1242;
+      }
+      .button:active {
+        transform: translate(0, 1px);
+      }
+
+      /* todo
+      tag
+      section header
+      icons
+      cards
+      */
+
+
+      /* Tablet */
+      @media (max-width: 960px) {
+        body {
+          font-size: 18px;
+        }
+      }
+
+      /* mobile */
+      @media (max-width: 720px) {
+        body {
+          font-size: 16px;
+          border: 0;
+        }
+      }
+
+      /* YOU CAN PROBABLY IGNORE MOST OF THIS! */
+
+      hr {
+        margin: 3em 0;
+        height: 2px;
+        border: 0;
+        background: #CCCAC6;
+      }
+
+      .container {
+        max-width: 56em;
+        padding: 0 1em;
+        margin: 0 auto;
+      }
+
+      .centeredColumn {
+        max-width: 48em;
+        margin: 0 auto;
+      }
+      p { max-width: 32em; }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+        color: #2D2D3F;
+        margin: 0;
+        margin-bottom: 1em;
+        padding: 0;
+        list-style: none;
+      }
+      .grid li {
+        margin: 0;
+        padding: 8em 0.75em 0.5em 0.75em;
+        background: white;
+        font-size: 0.7em;
+        line-height: 1.25em;
+        text-transform: uppercase;
+        letter-spacing: 2px; /* It’s good practice to add letter spacing to all-caps text */
+        font-weight: bold;
+        position: relative;
+      }
+      .grid button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      input {
+        background: transparent;
+        border: 0;
+        color: inherit;
+        font-family: 'Lato', sans-serif;
+        letter-spacing: 2px;
+        font-size: inherit;
+        font-weight: bold;
+        outline: 0;
+        width: 90%
+      }
+
+      /* Tablet */
+      @media (max-width: 960px) {
+        .grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        .grid li {
+          grid-column: span 1 !important; /* Sorry about these important rules! */
+        }
+        .grid .priority {
+          grid-column: span 3 !important;
+        }
+      }
+
+      /* mobile */
+      @media (max-width: 720px) {
+        .grid li {
+          grid-column: span 3 !important;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="centeredColumn">
+
+        <h1>Forge Website Style Guide</h1>
+        <p class="lead">This is an example of subheading&nbsp;text</p>
+
+      <h2>Typography</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quia quos quasi aut officiis nisi ipsa excepturi magni officia, quod nemo provident eveniet eos ea fugiat maxime quisquam neque optio vero cum consequatur hic quaerat. Officia quae <a href="#">this is a link</a> saepe, fugiat excepturi ipsum, corporis ab! Deserunt, ex et.</p>
+
+      <!-- <blockquote>
+        <p>Cupiditate earum magnam impedit. Architecto laudantium voluptatibus sunt corporis velit, fugit odio officiis magnam quam molestias itaque? Voluptates quos quasi quas possimus voluptas, voluptate ullam officiis veniam quam cum dolores libero accusamus ad amet aliquid.</p>
+        <p class="referee">The person’s name</p>
+      </blockquote> -->
+
+      <h2>Heading 2</h2>
+
+      <p>Inventore facere enim voluptate in molestias consectetur nobis eveniet, veritatis architecto aliquid mollitia omnis <a href="#">this is another link</a> sapiente quidem accusamus. Magnam ipsum quibusdam aperiam id a repudiandae maiores totam soluta illum nesciunt. Cupiditate repellendus odit quibusdam qui.</p>
+
+      <h3>Heading 3</h3>
+
+      <p class="small">Dolore itaque nam blanditiis reprehenderit, totam magni non quae sit. Repellat porro odio, autem in officiis similique blanditiis ut esse.</p>
+
+      <!-- <p class="label">This is a label / nav item</p>
+      <a href="#" class="button">This is a button</a> -->
+
+      <hr>
+
+      <h2>Primary Palette</h2>
+
+      <h3>Colours</h3>
+
+      <ul class="grid">
+        <li style="background: #F47A97; grid-column: span 4;">Pink
+          <br/>#<input id="pink" value="F47A97">
+          <button data-clipboard-target="#pink">Copy</button>
+        </li>
+        <li style="background: #EA7F6A; grid-column: span 4;">Flush
+          <br/>#<input id="flush" value="EA7F6A">
+          <button data-clipboard-target="#flush">Copy</button>
+        </li>
+        <li style="background: #FFC166; grid-column: span 4;">Yellow
+          <br/>#<input id="yellow" value="FFC166">
+          <button data-clipboard-target="#yellow">Copy</button>
+        </li>
+        <li style="background: #94C979; grid-column: span 4;">Green
+          <br/>#<input id="green" value="94C979">
+          <button data-clipboard-target="#green">Copy</button>
+        </li>
+        <li style="background: #65A1A8; grid-column: span 4;">Teal
+          <br/>#<input id="teal" value="65A1A8">
+          <button data-clipboard-target="#teal">Copy</button>
+        </li>
+        <li style="background: #92D6F4; grid-column: span 4;">Blue
+          <br/>#<input id="blue" value="92D6F4">
+          <button data-clipboard-target="#blue">Copy</button>
+        </li>
+      </ul>
+
+      <p>* For shades and tints, lighten or darken by 20%.</p>
+
+      <h3>Neutrals</h3>
+
+      <ul class="grid">
+        <li style="background: #2D2D3F; border: 1px solid #616166; grid-column: span 6; color: #F8F8F8;" class="priority">Midnight
+          <br/>#<input id="midnight" value="2D2D3F">
+          <button data-clipboard-target="#midnight">Copy</button>
+        </li>
+        <li style="background: #616166; grid-column: span 2; color: #F8F8F8;">Charcoal
+          <br/>#<input id="charcoal" value="616166">
+          <button data-clipboard-target="#charcoal">Copy</button>
+        </li>
+        <li style="background: #9F9FA6; grid-column: span 2;">Silver
+          <br/>#<input id="silver" value="9F9FA6">
+          <button data-clipboard-target="#silver">Copy</button>
+        </li>
+        <li style="background: #F8F8F8; grid-column: span 2;">White-ish
+          <br/>#<input id="white-ish" value="F8F8F8">
+          <button data-clipboard-target="#white-ish">Copy</button>
+        </li>
+      </ul>
+
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+      <script>
+        var btns = document.querySelectorAll('button');
+        var clipboard = new Clipboard(btns);
+      </script>
+  </body>
+</html>
